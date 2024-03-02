@@ -6,7 +6,8 @@ const port = process.env.PORT || 5070;
 
 const usersRoute = require("./routes/usersRoute");
 const boardRoutes = require("./routes/boardRoutes");
-
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 app.use("/api/users", usersRoute);
 app.use("/api/board", boardRoutes);

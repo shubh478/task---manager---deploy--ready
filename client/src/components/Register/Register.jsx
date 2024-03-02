@@ -43,7 +43,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("/api/users/register", formData);
+      const response = await axios.post("https://task-manager-backend-2-cyan.vercel.app/api/users/register", formData);
       console.log(response.data);
      
       toast.success("User registered successfully!");

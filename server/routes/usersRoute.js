@@ -132,3 +132,21 @@ router.post("/changepassword", authMiddleware, async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+
+
+router.post("/get-user-by-id", authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.body.userId);
+    res.send({
+      message: "User fetched successfully",
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    res.send({
+      message: error.message,
+      success: false,
+      data: null,
+    });
+  }
+});

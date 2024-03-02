@@ -12,7 +12,7 @@ function SharePage() {
   useEffect(() => {
     const fetchCardDetails = async () => {
       try {
-        const response = await axios.get(`/api/board/task/${cardId}`);
+        const response = await axios.get(`https://task-manager-backend-2-cyan.vercel.app/api/board/task/${cardId}`);
         setCardDetails(response.data);
       } catch (error) {
         console.error("Error fetching card details:", error);

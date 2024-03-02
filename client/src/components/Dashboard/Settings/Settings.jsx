@@ -44,7 +44,7 @@ const ChangePassword = () => {
         return;
       }
 
-      const response = await axios.post("/api/users/changepassword", formData);
+      const response = await axios.post("https://task-manager-backend-2-cyan.vercel.app/api/users/changepassword", formData);
       console.log(response.data);
 
       toast.success("Password changed successfully!");

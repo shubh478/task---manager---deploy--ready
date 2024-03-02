@@ -64,12 +64,12 @@ function PopUp({ onSave, onCancel, editableCard }) {
 
       if (editableCard) {
         const response = await axios.put(
-          `/api/board/task/${editableCard._id}`,
+          `https://task-manager-backend-2-cyan.vercel.app/api/board/task/${editableCard._id}`,
           newTask
         );
         onSave(response.data);
       } else {
-        const response = await axios.post("/api/board/task", newTask);
+        const response = await axios.post("https://task-manager-backend-2-cyan.vercel.app/api/board/task", newTask);
         onSave(response.data);
       }
 

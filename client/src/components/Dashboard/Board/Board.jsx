@@ -64,7 +64,7 @@ function Board() {
           return;
         }
 
-        const response = await axios.get("/api/board/task", {
+        const response = await axios.get("https://task-manager-backend-2-cyan.vercel.app/api/board/task", {
           params: { filterOption },
         });
 
@@ -92,7 +92,7 @@ function Board() {
       const token = localStorage.getItem("token");
       axios.defaults.headers.common["Authorization"] = token;
 
-      await axios.delete(`/api/board/task/${id}`);
+      await axios.delete(`https://task-manager-backend-2-cyan.vercel.app/api/board/task/${id}`);
 
       setCards((prevCards) => {
         const updatedCards = { ...prevCards };
@@ -145,7 +145,7 @@ function Board() {
         const token = localStorage.getItem("token");
         axios.defaults.headers.common["Authorization"] = token;
         movedCard.status = targetColumn;
-        await axios.put(`/api/board/task/${id}`, movedCard);
+        await axios.put(`https://task-manager-backend-2-cyan.vercel.app/api/board/task/${id}`, movedCard);
       } else {
         Object.keys(updatedCards).forEach((col) => {
           const index = updatedCards[col].findIndex((card) => card.id === id);

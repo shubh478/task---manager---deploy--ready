@@ -93,7 +93,7 @@ function Card({
 
   const generateCardDetailsUrl = () => {
     const cardId = encodeURIComponent(card._id);
-    const baseUrl = "http://localhost:5174/share";
+    const baseUrl = "https://task-manager-frontend-seven-ecru.vercel.app/share";
 
     const url = `${baseUrl}/${cardId}`;
     return url;
